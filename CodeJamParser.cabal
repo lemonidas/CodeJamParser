@@ -20,6 +20,6 @@ library
   exposed-modules:     GoogleCodeJam
   -- other-modules:       
   -- other-extensions:    
-  build-depends:       base >=4.7 && <4.8, bytestring, bytestring-lexing
+  build-depends:       base, bytestring, bytestring-lexing
   hs-source-dirs:      src
   default-language:    Haskell2010

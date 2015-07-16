@@ -3,7 +3,7 @@ module GoogleCodeJam where
 
 import qualified Data.ByteString as BS
 import qualified Data.ByteString.Char8 as BSC
-import qualified Data.ByteString.Lex.Double as BSD
+import qualified Data.ByteString.Lex.Fractional as BSD
 import Data.Char (isSpace)
 import Text.Printf
 
@@ -29,7 +29,7 @@ int3 :: Parser (Int, Int, Int)
 int3 = uncurry (first . (uncurry (,,))) . second int . int2
 
 double :: Parser Double
-double = second (BSC.dropWhile isSpace) . fromJust . BSD.readDouble
+double = second (BSC.dropWhile isSpace) . fromJust . BSD.readDecimal
 
 char :: Parser Char
 char = BSC.head &&& BSC.tail
