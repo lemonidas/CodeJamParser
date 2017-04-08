@@ -22,6 +22,9 @@ readInput = BS.getContents >>= newIORef
 int :: Parser Int
 int = second (BSC.dropWhile isSpace) . fromJust . BSC.readInt
 
+integer :: Parser Integer
+integer = second (BSC.dropWhile isSpace) . fromJust . BSC.readInteger
+
 int2 :: Parser (Int, Int)
 int2 = uncurry (first . (,)) . second int . int
 
